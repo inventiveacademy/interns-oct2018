@@ -4,7 +4,8 @@
   "description": "interns create trello kpi dashboard",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sync": "cross-env aws s3 sync client s3://interns-oct2018 --profile internship"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/inventivegroup/interns-oct2018/issues"
   },
-  "homepage": "https://github.com/inventivegroup/interns-oct2018#readme"
+  "homepage": "https://github.com/inventivegroup/interns-oct2018#readme",
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "npm": "^6.4.1"
+  }
 }
