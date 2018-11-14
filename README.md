@@ -4,17 +4,17 @@ Installation
 ----
 Clone the [repository](https://github.com/inventivegroup/interns-oct2018)
 
-With web-services as working directory, install npm dependencies with this command:
+Install npm dependencies in the client and web-services directories with this command:
 ```
 npm install
 ```
 npm Commands
 ----
-To sync the local client directory with the s3 bucket, use this command:
+To sync the local client/src directory with the s3 bucket, use this command in the client directory:
 ```
 npm run sync
 ```
-To deploy the web-services directory and its lambda functions to AWS:
+To deploy the web-services directory and its lambda functions to AWS, use this command in the web-services directory:
 ```
 npm run deploy
 ```

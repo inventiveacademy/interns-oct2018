@@ -5,7 +5,6 @@
   "main": "handler.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sync": "cross-env aws s3 sync ../client s3://interns-oct2018 --delete --profile internship",
     "deploy": "cross-env AWS_PROFILE=internship sls deploy"
   },
   "author": "camilo thinh roslyn",
