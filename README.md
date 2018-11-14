@@ -1,12 +1,21 @@
 # Trello KPI Dashboard
-
 A simple project to collect metrics from a [Trello](https://www.trello.com) board and create a web-based KPI dashboard
-
+Installation
+----
+Clone the [repository](https://github.com/inventivegroup/interns-oct2018)
+With web-services as working directory, install npm dependencies with this command:
+```
+npm install
+```
 npm Commands
 ----
 To sync the local client directory with the s3 bucket, use this command:
 ```
 npm run sync
+```
+To deploy the web-services directory and its lambda functions to AWS:
+```
+npm run deploy
 ```
 Postman Collection
 ----
