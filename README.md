@@ -3,6 +3,7 @@ A simple project to collect metrics from a [Trello](https://www.trello.com) boar
 Installation
 ----
 Clone the [repository](https://github.com/inventivegroup/interns-oct2018)
+
 With web-services as working directory, install npm dependencies with this command:
 ```
 npm install
