@@ -1,0 +1,15 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sync": "cross-env aws s3 sync ./src s3://interns-oct2018 --delete --profile internship"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cross-env": "^5.2.0"
+  }
+}
