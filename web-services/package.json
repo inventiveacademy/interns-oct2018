@@ -10,6 +10,7 @@
   "author": "camilo thinh roslyn",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.18.0",
     "cross-env": "^5.2.0",
     "serverless": "^1.32.0"
   },
