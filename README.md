@@ -25,6 +25,17 @@ To run the test use this command in the web-services directory:
 ```
 npm test
 ```
+## Create a new /boards endpoint, and test it
+Use serverless to create and deploy /boards end point on AWS that get boards from Trello API. 
+
+To deploy boards endpoint run the command in web-services directory. Make sure you are using corrected AWS account for this project
+```
+npm run deploy, Or sls deploy -v 
+```
+Run a jest test for the [deployed endpoit](https://qz9vhk352b.execute-api.us-east-1.amazonaws.com/dev/boards)
+```
+npm run test boards.test
+```
 ## Postman Collection
 We have included a Postman collection with API requests.  It will not work unless you enter the key and token for the project in the [collection variables](https://www.getpostman.com/docs/v5/postman/environments_and_globals/variables).
 
