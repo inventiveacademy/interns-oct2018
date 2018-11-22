@@ -1,4 +1,5 @@
 //request.js
+//this function use https get method to get API data
 const https = require('https');
 function request(url){
     return new Promise(resolve => {

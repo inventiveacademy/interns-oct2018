@@ -26,13 +26,11 @@ To run the test use this command in the web-services directory:
 npm test
 ```
 ## Create a new /boards endpoint, and test it
-Use serverless to create and deploy /boards end point on AWS that get boards from Trello API. 
+The project also requested to create and deploy /boards endpoint on AWS that use Axios to get boards from Trello API. Then, call the /boards endpoint in jest testing and return at least one board.
 
-To deploy boards endpoint run the command in web-services directory. Make sure you are using corrected AWS account for this project
+To deploy /boards endpoint and run all tests use same commands as the above guide
 ```
-npm run deploy, Or sls deploy -v 
-```
-Run a jest test for the [deployed endpoit](https://qz9vhk352b.execute-api.us-east-1.amazonaws.com/dev/boards)
+To run only a jest test for the [deployed endpoit] /boards(https://qz9vhk352b.execute-api.us-east-1.amazonaws.com/dev/boards)
 ```
 npm run test boards.test
 ```
