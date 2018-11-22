@@ -20,7 +20,8 @@ const getData = async () => {
     return await axios.get('https://api.trello.com/1/members/me/boards?', {
         params: {
             key: '52687c4e55d86179f5a1fbf7902a3f5e',
-            token: '6d8003663b4bca9ae82d8c2e9de8ab0ffb790da952d9897fd6277691b25009dd'
+            token: '6d8003663b4bca9ae82d8c2e9de8ab0ffb790da952d9897fd6277691b25009dd',
+            fields: 'name,id'
         }
     });
   } catch (error) {
@@ -33,15 +34,15 @@ const getData = async () => {
 //--------------------------------------------------
 module.exports.getBoard = async (event, context) => {
   const tb = await getData();
-  for(var i = 0; i < tb.data.length; i++){  
-    
-    if(tb.data[i].name.indexOf('Inter') >= 0){
-        return {
-          status: 200,
-          body: JSON.stringify(tb.data[i])            
-        }
-    }  
-  }
+  //no processing in phase6, just return list of all boards
+ 
+  return {
+    statusCode: 200,
+    body: JSON.stringify({
+      data: tb.data,
+      input: event, 
+    }),            
+  }    
 };
   
   // Use this code if you don't use the http event with the LAMBDA-PROXY integration
