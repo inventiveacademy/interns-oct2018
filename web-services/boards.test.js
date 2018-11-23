@@ -1,6 +1,6 @@
 var request = require('./request');
 //url is contained /boards endpoint that deployed on AWS lambda 
-var url = 'https://qz9vhk352b.execute-api.us-east-1.amazonaws.com/dev/boards';
+var url = 'https://mpau0ppws1.execute-api.us-east-1.amazonaws.com/dev/boards';
 
 test('Number of boards are greater than or equal 1', () => {
     request(url).then(function(value) {

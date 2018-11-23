@@ -42,7 +42,7 @@ module.exports.getBoard = async (event, context) => {
       data: tb.data,
       input: event, 
     }),            
-  }    
+  };    
 };
   
   // Use this code if you don't use the http event with the LAMBDA-PROXY integration
