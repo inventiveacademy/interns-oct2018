@@ -19,8 +19,8 @@ const getData = async () => {
   try {
     return await axios.get('https://api.trello.com/1/members/me/boards?', {
         params: {
-            key: '52687c4e55d86179f5a1fbf7902a3f5e',
-            token: '6d8003663b4bca9ae82d8c2e9de8ab0ffb790da952d9897fd6277691b25009dd',
+            key: '96e992b35b800ab9db9dc719439519f0',
+            token: '3c50380995f42d4fd2818dc2cdb95aae20c98c1a9231ea037df806ccd4f56898',
             fields: 'name,id'
         }
     });
