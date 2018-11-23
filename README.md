@@ -28,11 +28,11 @@ npm test
 ## Create a new /boards endpoint, and test it
 The project also requested to create and deploy /boards endpoint on AWS that use Axios to get boards from Trello API. Then, call the /boards endpoint in jest testing and return at least one board.
 
-To deploy /boards endpoint and run all tests use same commands as the above guide
+To deploy /boards endpoint and run all tests use same commands as the above guide.
+
+To run only a jest test for the deployed /boards endpoit
 ```
-To run only a jest test for the [deployed endpoit] /boards(https://qz9vhk352b.execute-api.us-east-1.amazonaws.com/dev/boards)
-```
-npm run test boards.test
+npm test boards.test
 ```
 ## Postman Collection
 We have included a Postman collection with API requests.  It will not work unless you enter the key and token for the project in the [collection variables](https://www.getpostman.com/docs/v5/postman/environments_and_globals/variables).
