@@ -28,6 +28,8 @@ npm test
 ## Create a new /boards endpoint, and test it
 The project contains a board endpoint that returns the names and ids of all boards on the Trello account
 
+Must have a file (env.yml) that locates at parent of web-service folder contains account's info to access the Trello
+
 Use serverless to deploy /boards endpoint using npm run deploy
 
 Time permitting, we will use jest mock to write test for the endpoint
