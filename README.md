@@ -25,6 +25,15 @@ To run the test use this command in the web-services directory:
 ```
 npm test
 ```
+## Create a new /boards endpoint, and test it
+The project contains a board endpoint that returns the names and ids of all boards on the Trello account
+
+Must have a file (env.yml) that locates at parent of web-service folder contains account's info to access the Trello
+
+Use serverless to deploy /boards endpoint using npm run deploy
+
+Time permitting, we will use jest mock to write test for the endpoint
+
 ## Postman Collection
 We have included a Postman collection with API requests.  It will not work unless you enter the key and token for the project in the [collection variables](https://www.getpostman.com/docs/v5/postman/environments_and_globals/variables).
 

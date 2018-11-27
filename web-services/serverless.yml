@@ -20,7 +20,8 @@ service: web-services # NOTE: update this with your service name
 provider:
   name: aws
   runtime: nodejs8.10
-
+  environment: ${file(../env.yml)}
+    
 plugins:
   - serverless-offline
 
@@ -63,6 +64,12 @@ functions:
     events:
       - http:
           path: ping
+          method: get
+  getBoard:
+    handler: handler.getBoard
+    events:
+      - http:
+          path: boards
           method: get
   
 #    The following are a few example events you can configure
