@@ -16,17 +16,13 @@ module.exports.ping = async (event, context) => {
 const axios = require('axios');
 
 var getData = async () => {
-  //try {
     return await axios.get('https://api.trello.com/1/members/me/boards?', {
         params: {
             key: process.env.KEY,
             token: process.env.TOKEN,            
             fields: 'name,id'
         }
-    });
-  //} catch (error) {
-  //  console.error(error);
-  //}
+    });  
 }; 
 //--------------------------------------------------
 //The below function will process the API data and
