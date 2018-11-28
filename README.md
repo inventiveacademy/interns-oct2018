@@ -28,14 +28,10 @@ npm test
 ## Create a new /boards endpoint, and test it
 The project contains a board endpoint that returns the names and ids of all boards on the Trello account
 
-The endpoint uses private key and token to get Trello API data. These sensitive should not be put in codes because the codes can be seen by anyone on gitHub. So must create a file (env.yml) that loactes at parent of web-service folder contains these info, and it won't upload on gitHub. The default format of this file like below
+The endpoint uses private key and token to get Trello API data. These sensitive should not be put in codes because the codes can be seen by anyone on gitHub. So must create a file (env.yml) to store these info, then put it at parent of web-service folder. It won't upload on gitHub. 
 ```
-env.yml
-defaul:
-    KEY: ----your key----
-    TOKEN: ----your token----
+To create the env.yml, just edit evn.yml.default file with your own account info in web-services folder and save as env.yml file in the parent folder
 ```
-
 Use serverless to deploy /boards endpoint using npm run deploy
 
 Time permitting, we will use jest mock to write test for the endpoint

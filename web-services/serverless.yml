@@ -20,7 +20,7 @@ service: web-services # NOTE: update this with your service name
 provider:
   name: aws
   runtime: nodejs8.10
-  environment: ${file(../env.yml):default}
+  environment: ${file(../env.yml)}
     
 plugins:
   - serverless-offline
