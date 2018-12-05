@@ -10,6 +10,10 @@ Install npm dependencies in the client and web-services directories with this co
 npm install
 ```
 ## npm Commands
+> __WARNING:__
+
+> __Project is deployed.  Removing and redploying will require a new endpoint url to be entered in the index.html!__
+
 To sync the local client/src directory with the s3 bucket, use this command in the client directory:
 ```
 npm run sync
@@ -18,6 +22,11 @@ To deploy the web-services directory and its lambda functions to AWS, use this c
 ```
 npm run deploy
 ```
+To remove the web-services directory and its lambda functions to AWS, use this command in the web-services
+directory:
+```
+npm run remove
+```
 ## Testing
 The project has one test that tests the ping function to make sure that it returns "pong"
 
@@ -25,18 +34,14 @@ To run the test use this command in the web-services directory:
 ```
 npm test
 ```
-## Create a new /boards endpoint, and test it
-The project contains a board endpoint that returns the names and ids of all boards on the Trello account
+## env.yml
+The project contains a /chartdb endpoint that returns created and resolved dates
 
-The endpoint uses private key and token to get Trello API data. These sensitive should not be put in codes because the codes can be seen by anyone on gitHub. So must create a file (env.yml) to store these info, then put it at parent of web-service folder. It won't upload on gitHub. 
-```
-To create the env.yml, just edit evn.yml.default file with your own account info in web-services folder and save as env.yml file in the parent folder
-```
-Use serverless to deploy /boards endpoint using npm run deploy
+The endpoint uses a private key and token to get Trello API data. In order to protect the data, you must create a file (env.yml) to store the key and token. It is ignored and won't upload on gitHub. 
 
-Time permitting, we will use jest mock to write test for the endpoint
+To create the env.yml, edit the env.yml.default file in the web-services folder with the correct info and save it as env.yml in the parent folder (interns-oct2018)
 
-
+Time permitting, we will use jest mock to write tests for the endpoint
 
 ## Postman Collection
 We have included a Postman collection with API requests.  It will not work unless you enter the key and token for the project in the [collection variables](https://www.getpostman.com/docs/v5/postman/environments_and_globals/variables).
