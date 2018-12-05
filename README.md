@@ -12,7 +12,7 @@ npm install
 ## npm Commands
 > __WARNING:__
 
-> __Project is deployed.  Removing and redploying will require a new endpoint url to be entered in the index.html!__
+> __Project is deployed.  Any new deployment will require a new endpoint url to be entered in the /client/src/client.js file!__
 
 To sync the local client/src directory with the s3 bucket, use this command in the client directory:
 ```
