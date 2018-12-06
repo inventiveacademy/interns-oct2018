@@ -102,7 +102,7 @@ module.exports.getAction = async (event, context) => {
   } 
   //process and return data for chartdb endpoint 
   return {
-    statusCode: 200,
+    statusCode: 500,
     headers:{
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Credential': true,
