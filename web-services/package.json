@@ -5,7 +5,8 @@
   "main": "handler.js",
   "scripts": {
     "test": "jest",
-    "deploy": "cross-env AWS_PROFILE=internship sls deploy"
+    "deploy": "cross-env AWS_PROFILE=internship sls deploy",
+    "remove": "cross-env AWS_PROFILE=internship sls remove"
   },
   "author": "camilo thinh roslyn",
   "license": "MIT",
