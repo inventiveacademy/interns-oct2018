@@ -88,7 +88,7 @@ async function two_lines() {
   // calling our lambda function
   //var cr_call;
   try {
-    var cr_call = await axios.get('https://91duv1eln6.eexecute-api.us-east-1.amazonaws.com/dev/chartdb');
+    var cr_call = await axios.get('https://91duv1eln6.execute-api.us-east-1.amazonaws.com/dev/chartdb');
   }
   catch(err) {
     document.getElementById("axios_error").innerHTML = "The data could not be fetched; Try again later";
