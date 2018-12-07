@@ -86,7 +86,21 @@ function line_operations(a_line) {
  ***********************************************************/
 async function two_lines() {
   // calling our lambda function
-  var cr_call = await axios.get('https://91duv1eln6.execute-api.us-east-1.amazonaws.com/dev/chartdb');
+  try {
+    var cr_call = await axios.get('https://91duv1eln6.execute-api.us-east-1.amazonaws.com/dev/chartdb');
+  }
+  catch(err) {}
+    var myChart = new Chart(ctx, {
+      options: {
+        title: {
+          display: true,
+          text: "The data could not be fetched; Try again later",
+          fontFamily: 'Lucida Console',
+          fontColor: 'red',
+          fontSize: 25
+        }
+      }
+    });
   // get created & resolved data into variables
   var created = cr_call.data.created;  
   var resolved = cr_call.data.resolved;
