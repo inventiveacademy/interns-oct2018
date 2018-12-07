@@ -88,8 +88,9 @@ module.exports.getAction = async (event, context) => {
       key: process.env.KEY,
       token: process.env.TOKEN
     }
-    //get created cards info from Trello API   
+    //get created cards info from Trello API and process it   
     var tb1 = await getData(urlPath, params);
+    var created = processDB(tb1.data,'cc');
     
     urlPath = 'https://api.trello.com/1/lists/5b33d1f83c2f9cf65b0d80dd/cards?'
     params = {                  
@@ -97,13 +98,14 @@ module.exports.getAction = async (event, context) => {
       key: process.env.KEY,
       token: process.env.TOKEN
     }
-    //get resolved cards info from Trello API  
-    var tb2 = await getData(urlPath, params);     
+    //get resolved cards info from Trello API and process it 
+    var tb2 = await getData(urlPath, params);
+    var resolved = processDB(tb2.data,'rc');     
   }catch (error){
     console.log();
     hasError = true;
   } 
-  //process and return data for chartdb endpoint 
+  //return data for chartdb endpoint 
   return {
     headers:{
       'Access-Control-Allow-Origin': '*',
@@ -111,8 +113,8 @@ module.exports.getAction = async (event, context) => {
     },
     statusCode: hasError? 500 : 200,
     body: JSON.stringify({
-      created: processDB(tb1.data,'cc'),          
-      resolved: processDB(tb2.data,'rc'),     
+      created: created,         
+      resolved: resolved,     
     }),        
   };  
 }; 
