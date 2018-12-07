@@ -48,7 +48,7 @@ function line_operations(a_line) {
 }
 async function two_lines() {
   try {
-    var cr_call = await axios.get('https://91duv1eln6.eexecute-api.us-east-1.amazonaws.com/dev/chartdb');
+    var cr_call = await axios.get('https://91duv1eln6.execute-api.us-east-1.amazonaws.com/dev/chartdb');
   }
   catch(err) {}
     var myChart = new Chart(ctx, {
