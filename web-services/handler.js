@@ -75,6 +75,8 @@ module.exports.getBoard = async (event, context) => {
 //and put them back to the /chardb endpoint 
 //--------------------------------------------------
 module.exports.getAction = async (event, context) => {
+  var hasError = false;
+  
   try{ 
     var urlPath = 'https://api.trello.com/1/boards/5b33a8f601c94a9c9b0e71d8/actions?';
     var params = {                  
@@ -99,18 +101,19 @@ module.exports.getAction = async (event, context) => {
     var tb2 = await getData(urlPath, params);     
   }catch (error){
     console.log();
+    hasError = true;
   } 
   //process and return data for chartdb endpoint 
   return {
-    statusCode: 500,
     headers:{
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Credential': true,
     },
+    statusCode: hasError? 500 : 200,
     body: JSON.stringify({
-        created: processDB(tb1.data,'cc'),          
-        resolved: processDB(tb2.data,'rc'),     
-    }),            
+      created: processDB(tb1.data,'cc'),          
+      resolved: processDB(tb2.data,'rc'),     
+    }),        
   };  
 }; 
   // Use this code if you don't use the http event with the LAMBDA-PROXY integration
