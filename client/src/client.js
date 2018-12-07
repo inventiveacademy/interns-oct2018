@@ -48,7 +48,8 @@ function line_operations(a_line) {
 }
 async function two_lines() {
   try {
-    var cr_call = await axios.get('https://91duv1eln6.execute-api.us-east-1.amazonaws.com/dev/chartdb');
+    //var cr_call = await axios.get('https://91duv1eln6.execute-api.us-east-1.amazonaws.com/dev/chartdb');
+    var cr_call = await axios.get('https://mvy3o1cqg0.eexecute-api.us-east-1.amazonaws.com/dev/chartdb');
   }
   catch(err) {}
     var myChart = new Chart(ctx, {
@@ -56,8 +57,9 @@ async function two_lines() {
         title: {
           display: true,
           text: "The data could not be fetched; Try again later",
+          fontFamily: 'Lucida Console',
           fontColor: 'red',
-          fontSize: 30
+          fontSize: 25
         }
       }
     }); 

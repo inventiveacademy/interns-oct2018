@@ -75,6 +75,8 @@ module.exports.getBoard = async (event, context) => {
 //and put them back to the /chardb endpoint 
 //--------------------------------------------------
 module.exports.getAction = async (event, context) => {
+  var hasError = false;
+  
   try{ 
     var urlPath = 'https://api.trello.com/1/boards/5b33a8f601c94a9c9b0e71d8/actions?';
     var params = {                  
@@ -86,8 +88,9 @@ module.exports.getAction = async (event, context) => {
       key: process.env.KEY,
       token: process.env.TOKEN
     }
-    //get created cards info from Trello API   
+    //get created cards info from Trello API and process it   
     var tb1 = await getData(urlPath, params);
+    var created = processDB(tb1.data,'cc');
     
     urlPath = 'https://api.trello.com/1/lists/5b33d1f83c2f9cf65b0d80dd/cards?'
     params = {                  
@@ -95,26 +98,25 @@ module.exports.getAction = async (event, context) => {
       key: process.env.KEY,
       token: process.env.TOKEN
     }
-    //get resolved cards info from Trello API  
-    var tb2 = await getData(urlPath, params);     
+    //get resolved cards info from Trello API and process it 
+    var tb2 = await getData(urlPath, params);
+    var resolved = processDB(tb2.data,'rc');     
   }catch (error){
     console.log();
+    hasError = true;
   } 
-  //process and return data for chartdb endpoint 
+  //return data for chartdb endpoint 
   return {
-    statusCode: 200,
     headers:{
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Credential': true,
     },
+    statusCode: hasError? 500 : 200,
     body: JSON.stringify({
-        created: processDB(tb1.data,'cc'),          
-        resolved: processDB(tb2.data,'rc'),     
-    }),            
+      created: created,         
+      resolved: resolved,     
+    }),        
   };  
 }; 
   // Use this code if you don't use the http event with the LAMBDA-PROXY integration
   // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
-
-
-
